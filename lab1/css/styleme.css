@@ -42,6 +42,10 @@ a:hover{
     font-size: 20px;        
 }
 
+#myPhoto{
+    width: 200px;
+    height: 200px;
+}
 
 #mood li{
     float: left;  
@@ -66,7 +70,7 @@ ol ul{
 ol ul>li:nth-child(2n-1){
     color: blue;
     font-weight: bold;
-    text-transform: italic;    
+    font-style: italic;    
 }
 ol ul>li:nth-child(2n){
   text-indent: 20px; 
