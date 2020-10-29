@@ -46,10 +46,13 @@ li{
   display: flex;  
   min-height: 30px;
 }
-li>label,li>input,li>select,li>.checkboxes{
+li>label,li>input,li>select,li>.checkboxes,li>.textarea{
   flex: 1;
 }
-
+textarea{
+  
+  width: 100%;
+}
 footer{
   display: flex;
   background: gray;
