@@ -1,0 +1,65 @@
+*{
+  padding: 0;
+  margin: 0;  
+}
+header,footer{
+  height: 32px;
+  background: #61e1ffd6; 
+  padding: 10px;
+}
+h1{
+  color: white;
+  display: inline-block;
+  
+}
+header div{
+  display: inline-block;
+  margin-left: 20px;
+}
+main{
+  margin: 30px;
+  display: flex;
+}
+header span{
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+  transform: rotate(90deg);
+  
+}
+header div{
+  text-decoration: underline;
+}
+span.require{
+  color: red;
+}
+ul{
+  list-style: none;
+  flex: 1;
+  
+}
+main ul:first-child{
+  flex: 2;
+}
+ul>li{
+  padding: 10px;
+}
+li{
+  display: flex;  
+  min-height: 30px;
+}
+li>label,li>input,li>select,li>.checkboxes{
+  flex: 1;
+}
+
+footer{
+  display: flex;
+  background: gray;
+  justify-content: space-evenly;
+}
+footer button{
+  width: 100px; 
+  height: 30px;
+  background:  #61e1ffd6;
+  color:white;
+}
