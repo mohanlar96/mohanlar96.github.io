@@ -38,9 +38,7 @@ ul{
   flex: 1;
   
 }
-main ul:first-child{
-  flex: 2;
-}
+
 ul>li{
   padding: 10px;
 }
