@@ -11,7 +11,7 @@ window.onload=function(){
 			let textArea=document.getElementById("text");
 
 		const style = getComputedStyle(textArea);
-		textArea.style.fontSize=(parseInt(style.fontSize)+2)+"px";
+		textArea.style.fontSize=(parseInt(style.fontSize)+2)+"pt";
 
 		},500);
 		
