@@ -1,23 +1,15 @@
 window.onload=function(){
 
 	alert("Hello world"); //modify
+	let textArea=document.getElementById("text");
+	var size = parseInt(getComputedStyle(textArea).fontSize);	
 
 	document.getElementsByTagName("button")[0].onclick=function(){
-
-		// alert("Hello world"); //modify
-
-
-		setInterval(function(){
-			let textArea=document.getElementById("text");
-
-		const style = getComputedStyle(textArea);
-		textArea.style.fontSize=(parseInt(style.fontSize)+2)+"pt";
-
-		},500);
 		
-
-
-
+		setInterval(function(){		
+		 size=size+2; 		
+		 textArea.style.fontSize=size+"pt";
+		},500);		
 	}
 	var checked =0;
 	document.getElementsByName("bling")[0].onchange=function(){
