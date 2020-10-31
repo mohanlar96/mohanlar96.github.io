@@ -1,10 +1,10 @@
 window.onload=function(){
 
-	// alert("Hello world");
+	alert("Hello world"); //modify
 
 	document.getElementsByTagName("button")[0].onclick=function(){
 
-		// alert("Hello world");
+		// alert("Hello world"); //modify
 
 
 		setInterval(function(){
