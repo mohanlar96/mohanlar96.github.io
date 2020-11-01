@@ -14,7 +14,7 @@ a{
   cursor: pointer;
   
 }
-#zen-intro,aside,#zen-participation,#zen-benefits,#zen-explanation,#zen-requirements{
+#zen-intro,aside,#zen-participation,#zen-benefits,#zen-explanation,#zen-requirements ,footer{
   background: #f7f7f7;
 }
 
@@ -33,7 +33,7 @@ a{
   display: grid;
    grid-template-columns:repeat(4,1fr);
   grid-gap: 2em;
-  
+  position: relative; 
   
 }
        #zen-participation{
@@ -44,24 +44,67 @@ a{
         }
         #zen-requirements{ 
           grid-row: 1;
-          grid-column: 1/3;   
+          grid-column: 1/5;   
 
         }
-        footer{
-          background: red;
-          height: 200px;
-          grid-column: 1/5;
-        }
+#zen-explanation{
+   grid-row: 3;
+          grid-column: 1/5; 
+  
+}
+#zen-benefits{
+  grid-row: 4;
+          grid-column: 1/5; 
+  
+  
+}  
+
+        footer{    
+          grid-column: 1/5;        
+          display: flex; 
+          margin-bottom: 20px;
+          justify-items:; 
+/*           height: center; */
+         
+          justify-items: center;
+          align-items: center;
+          justify-content: ;
+       }
+footer >a{
+  flex: 1;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  border:5px solid #000;
+  border-radius: 100px;
+  height: 100px;
+  line-height: 100px;
+  width: 100px;
+  margin: 100px;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #549aff;
+  color: white;
+  border-color: #549aff; 
+  transition :all 1s;
+}
+
+footer >a:hover{
+   background: #ff5454;
+    border-color: #ff5454; 
+  transform: rotate(360deg); 
+}
+footer>a:first-child{
+  margin-left: 20px;
+}
 #zen-intro{  
  grid-column: 1/4;   
 }
-
 aside{
-/*  grid-column: 1/4;    */
-
+  align-self: flex-start;
 }
-
-
 
 /* styling starting  */
 
