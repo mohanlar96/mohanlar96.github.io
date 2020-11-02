@@ -14,7 +14,7 @@ a{
   cursor: pointer;
   
 }
-#zen-intro,aside,#zen-participation,#zen-benefits,#zen-explanation,#zen-requirements ,footer{
+#zen-intro,aside,#zen-participation,#zen-benefits,#zen-explanation,#zen-requirements {
   background: #f7f7f7;
 }
 
@@ -54,21 +54,18 @@ a{
 }
 #zen-benefits{
   grid-row: 4;
-          grid-column: 1/5; 
-  
+  grid-column: 1/5;  
   
 }  
 
-        footer{    
-          grid-column: 1/5;        
+        footer{  
+          width: auto;
+          margin: auto;
+          margin-top:-100px;
+          grid-column: 1/5;     
           display: flex; 
           margin-bottom: 20px;
-          justify-items:; 
-/*           height: center; */
          
-          justify-items: center;
-          align-items: center;
-          justify-content: ;
        }
 footer >a{
   flex: 1;
