@@ -43,7 +43,6 @@ onload=()=>{
 		speed=(speed==500)?200:500;
 		resetAnimate();
     }
-
 	$("start",()=>{startAnimate()});
 	$("stop",()=>{
 		stopAnimate();
@@ -57,5 +56,4 @@ onload=()=>{
 	$("turbo",()=>{
 		toggleTurbo();
 	});
-
 }
