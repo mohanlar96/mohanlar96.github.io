@@ -3,7 +3,7 @@ $(function() {
 	let win;
 	lose= ()=>{
 		if(win!=true){
-			$('div.boundary:not(:last)').addClass('error');
+			$('div.boundary:not(:last)').addClass('youlose');
 			status.text("You Lost! :(");
 			win=false;
 		}
@@ -16,7 +16,7 @@ $(function() {
 	}
 	reset=()=>{
 		win=null;	
-		$('div.boundary').removeClass('error');
+		$('div.boundary').removeClass('youlose');
 	}
 	$("#start").on('click',()=>{
 		reset();	
