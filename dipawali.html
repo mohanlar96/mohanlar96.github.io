@@ -76,6 +76,10 @@
         messageElement.textContent = atob(messages[parseInt(localStorage.getItem("currentMessage")) || 0]);
 
         function displayNextMessage() {
+
+            messageElement.textContent = atob(messages[parseInt(localStorage.getItem("currentMessage")) || 0]);
+
+            
             let currentMessage = parseInt(localStorage.getItem("currentMessage")) || 0;
             let lastDisplayedTime = parseInt(localStorage.getItem("lastDisplayedTime")) || 0;
             const now = Date.now();
