@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Surprise</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffeb3b;
+            background-image: radial-gradient(circle at top left, #fff59d, #ffeb3b, #fdd835);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #673ab7;
+        }
+
+        #message {
+            font-size: 2em;
+            color: #ffffff;
+            background-color: #8e44ad;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        .tip {
+            font-size: 1.1em;
+            color: #5d4037;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #ffcc80;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message"></div>
+    <p class="tip">Tip: This page refreshes every 2.5 minutes to give you a new clue!</p>
+
+    <script>
+        const messages = [
+            "SGFwcHkgRGl3YWxpISBMYXhtaSAhISEgR2V0IHJlYWR5IGZvciBhIHN1cnByaXNlIQ==",
+            "VGhlIHN1cnByaXNlIGlzIGNsb3NlciB0aGFuIHlvdSByZWFsaXplISBCb3VnaHQganVzdCAxMCBkYXlzIGFnbywgaXQncyBoaWRkZW4gaW4gYSBzcG90IHlvdSBwYXNzIGJ5IGV2ZXJ5IGRheS4g8J+agA==",
+            "SGludDogSXTigJlzIHR1Y2tlZCBhd2F5IHNvbWV3aGVyZSB1bmV4cGVjdGVkLiBBbnkgaWRlYXMgd2hlcmUgdGhpcyBteXN0ZXJ5IG1pZ2h0IGJlPw==",
+            "QW5vdGhlciBoaW50OiBJdOKAmXMgaGlkZGVuIGluc2lkZSBzb21ldGhpbmcgeW91IGNhcnJ5IHdpdGggeW91IHRvIHRoZSBvZmZpY2UuIENvdWxkIGl0IGJlIHlvdXIgYmFnPw==",
+            "QWxtb3N0IHRoZXJlISBJdOKAmXMgc3RvcmVkIHdoZXJlIHlvdSB1c3VhbGx5IGtlZXAgZ3JvY2VyaWVzLCBidXQgdGhpcyBpcyBkZWZpbml0ZWx5IG5vdCBmb29k4oCmIPCfmJc=",
+            "WW914oCZcmUgZ2V0dGluZyBjbG9zZSEgVGFrZSBhIGxvb2sgaW5zaWRlIHRoZSBjYXIuIERvIHlvdSBmZWVsIHRoZSBleGNpdGVtZW50IGJ1aWxkaW5nPyDwn5eA4oCm",
+            "WW914oCZdmUgZm91bmQgaXQhIE9wZW4gdGhlIGNhciB0cnVuayBhbmQgY2hlY2sgYmVuZWF0aCB0aGUgc3BhcmUgdGlyZeKAmCBZb3VyIHN1cnByaXNlIGF3YWl0cyEgwqTwn5iT4oCm"
+        ];;
+
+        const delay = (60000 * 2.5); // 2.5 minutes in milliseconds
+        const messageElement = document.getElementById("message");
+
+        messageElement.textContent = atob(messages[parseInt(localStorage.getItem("currentMessage")) || 0]);
+
+        function displayNextMessage() {
+            let currentMessage = parseInt(localStorage.getItem("currentMessage")) || 0;
+            let lastDisplayedTime = parseInt(localStorage.getItem("lastDisplayedTime")) || 0;
+            const now = Date.now();
+
+            // Check if enough time has passed since the last message was displayed
+            if (now - lastDisplayedTime >= delay) {
+                if (currentMessage < messages.length) {
+                    // Display the current message
+                    messageElement.textContent = atob(messages[currentMessage]);
+
+                    // Update local storage with the current message index and display time
+                    localStorage.setItem("currentMessage", currentMessage + 1);
+                    localStorage.setItem("lastDisplayedTime", now);
+
+                    // Reset message sequence after the last message
+                    if (currentMessage + 1 >= messages.length) {
+                        localStorage.setItem("currentMessage", 0);
+                    }
+                }
+            }
+        }
+
+        // Check if the page has been opened before by looking for a "pageOpened" flag in local storage
+        if (!localStorage.getItem("pageOpened")) {
+            localStorage.setItem("pageOpened", true); // Set the flag on first visit
+            localStorage.setItem("currentMessage", 0); // Start from the first message
+            localStorage.setItem("lastDisplayedTime", Date.now()); // Set the initial display time
+        }
+
+        // Run displayNextMessage every second to check for the next message condition
+        setInterval(displayNextMessage, 1000);
+    </script>
+</body>
+
+</html>
